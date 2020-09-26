@@ -23,7 +23,7 @@ Lib para telegram
 
 > Documentar problema :heavy_check_mark:
 
-> Login :waning:
+> Login :warning:
 
 > Get messages in SENDER :warning:
 
