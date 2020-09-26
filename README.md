@@ -25,7 +25,7 @@ Lib para telegram
 
 > Login :waning:
 
-> Get messages in SENDER :waning:
+> Get messages in SENDER :warning:
 
-> Send messages to RECEIVER :waning:
+> Send messages to RECEIVER :warning:
 
