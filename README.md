@@ -1,4 +1,4 @@
-# Encaminhador de mensagens
+# Encaminhador Telegram
 
 ### Como pegar os tokens
 
@@ -7,6 +7,7 @@ Para tokens de usuários:
     https://web.telegram.org/#/im?p=u1191061923_14953885605327909077
 
     TOKEN_USER = '1191061923_14953885605327909077' 
+
 Para tokens dos grupos:
 
     https://web.telegram.org/#/im?p=g453876445
@@ -23,9 +24,8 @@ Lib para telegram
 
 > Documentar problema :heavy_check_mark:
 
-> Login :warning:
+> Login :heavy_check_mark:
 
-> Get messages in SENDER :warning:
+> receber mensagens para SENDER :heavy_check_mark:
 
-> Send messages to RECEIVER :warning:
-
+> enviar mensagens para RECEIVER :heavy_check_mark:

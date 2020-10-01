@@ -1,25 +1,32 @@
 from telegram.client import Telegram
-
-# Token do usuário 
-TOKEN_USER = '1016353473_6802340938325777775'
-# Token do chat do grupo remetente
-CHAT_ID_SENDER = '-453876445'
-# Token do chat do grupo destinatário
-CHAT_ID_RECEIVER = '366089799'
-
-
-# API info
-api_id = 1872826
-api_hash = '644c4661860ead457b0dbaff76203f07'
-phone_number = '+556984224860'
-dbenc = 'chappie'
+from json import dumps
+from secret import *
 
 
 client = Telegram(
-    api_id=api_id,
-    api_hash=api_hash,
-    phone=phone_number,
-    database_encryption_key=dbenc,
+    api_id=API_ID,
+    api_hash=API_HASH,
+    phone=PHONE_NUMBER,
+    database_encryption_key=DBENC,
 )
 
-client.login(blocking=False)
+
+client.login()
+
+
+def new_message_handler(update):  
+    print(dumps(update['message']['chat_id'], indent=4))
+    if str(update['message']['chat_id']) == CHAT_ID_SENDER:
+        print(dumps(update, indent=4))
+        message_content = update['message']['content'].get('text', {})
+        message_entities = message_content.get('entities', '')
+        message_text = message_content.get('text', {})
+        print('\n\n\n', 'Encaminhando mensagem', '\n\n\n')
+        client.send_message(
+            chat_id=CHAT_ID_RECEIVER,
+            text=message_text,
+        )
+
+
+client.add_message_handler(new_message_handler)
+client.idle()
