@@ -1,4 +1,4 @@
-# Encaminhador de mensagens do telegram
+# Encaminhador de mensagens
 
 ### Como pegar os tokens
 
